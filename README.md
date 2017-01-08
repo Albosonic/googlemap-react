@@ -2,20 +2,21 @@
 
 > Google Map React Component.
 
-**Example**
-````shell
-  npm install --save googlemap-react
-```
-## also don't foget about this
 
-````html
-<script src="https://maps.googleapis.com/maps/api/js?key=YOURE_API_KEY"></script>
+```shell
+  npm install --save googlemap-react
 ```
 
 ```javascript
 
 import GoogleMap from 'googlemap-react';
 ```
+
+```html
+<!-- dont forget to add this in your html -->
+<script src="https://maps.googleapis.com/maps/api/js?key=YOURE_API_KEY"></script>
+```
+
 <GoogleMap 
 arrivalTime={new Date()}
 departureTime={new Date()}
