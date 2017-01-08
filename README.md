@@ -17,19 +17,11 @@ import GoogleMap from 'googlemap-react';
 <script src="https://maps.googleapis.com/maps/api/js?key=YOURE_API_KEY"></script>
 ```
 
-<GoogleMap 
-arrivalTime={new Date()}
-departureTime={new Date()}
-destination={'chicago'}
-nMap={1} 
-origin={'california'} 
-modes={[] || null}
-travelMode={'TRANSIT'} />  
-
 ```js
 
-## the parameters for these attributes are inherited by the request objest in the google maps api call
-## these are mock entries. they should give you a hint about the input types expected by the API
+## parameters/props that get passed into the <GoogleMap /> component attributes are inherited 
+## by the request object and used in the request to the google maps API 
+## these are mock entries below. they should give you a hint about the input types expected by the API
 
 **Example**
 
