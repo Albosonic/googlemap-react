@@ -2,9 +2,16 @@
 
 > Google Map React Component.
 
-  Install:
+**Example**
+````shell
   npm install --save googlemap-react
-  
+```
+## also don't foget about this
+
+````html
+<script src="https://maps.googleapis.com/maps/api/js?key=YOURE_API_KEY"></script>
+```
+
 ```javascript
 
 import GoogleMap from 'googlemap-react';
@@ -20,7 +27,7 @@ travelMode={'TRANSIT'} />
 
 ```js
 
-## the parameters sor these attributes are inherited by the request objest in the google maps api call
+## the parameters for these attributes are inherited by the request objest in the google maps api call
 ## these are mock entries. they should give you a hint about the input types expected by the API
 
 **Example**
