@@ -1,1 +1,4 @@
-module.exports = require('./dist/googlemap-react');
+var googlemap = require('./lib/googlemap');
+
+module.exports = googlemap;
+
