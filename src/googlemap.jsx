@@ -1,13 +1,6 @@
 import React, { Component } from 'react';
 
 class GoogleMapComponent extends Component {
-  constructor(props) {
-    super(props);
-    this.props = {
-      mapDiv: document.getElementById(mapID);
-    }
-  }
-
   componentDidMount() {
     const directionsDisplay;
     const directionsService;
@@ -21,6 +14,8 @@ class GoogleMapComponent extends Component {
       },
       zoom: 8
     }
+
+    this.props.mapDiv = mapDiv: document.getElementById(mapID);
 
     map = new google.maps.Map(document.getElementById(mapID), mapOptions);
     directionsDisplay = new google.maps.DirectionsRenderer();
