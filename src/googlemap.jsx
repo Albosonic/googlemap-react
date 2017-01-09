@@ -6,6 +6,7 @@ class GoogleMapComponent extends Component {
     const directionsService;
     let infoWindow;
     let map;
+    const mapID = "mapDiv" + this.props.nMap;
     const mapOptions = {
       center: {
         lat: -34.397,
