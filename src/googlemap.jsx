@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 class GoogleMapComponent extends Component {
   componentDidMount() {
-    const directionsDisplay;
-    const directionsService;
+    let directionsDisplay;
+    let directionsService;
     let infoWindow;
     let map;
     const mapID = "mapDiv" + this.props.nMap;
@@ -59,7 +59,7 @@ class GoogleMapComponent extends Component {
       handleLocationError(false, infoWindow, map.getCenter());
     }
 
-    const handleLocationError = ({browserHasGeolocation, infoWindow, pos}) => {
+    const handleLocationError = (browserHasGeolocation, infoWindow, pos) => {
       infoWindow.setPosition(pos);
       infoWindow.setContent(browserHasGeolocation ?
       'Error: The Geolocation service failed.' : 'Error: Your browser doesn\'t support geolocation.');
@@ -70,7 +70,7 @@ class GoogleMapComponent extends Component {
     const style = {
       height: "50%",
       width: "50%",
-      position: "absolute"
+      position: "absolute",
       margin: "5% 0% 5% 10%"
     }
 
