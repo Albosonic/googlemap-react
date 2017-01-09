@@ -4,7 +4,7 @@
 
 To install enter this into your command line:
 ```shell
-  npm install --save googlemap-react
+npm install --save googlemap-react
 ```
 To use as an import in you application include the below code:
 ```javascript

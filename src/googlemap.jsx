@@ -1,27 +1,25 @@
 import React, { Component } from 'react';
 
 class GoogleMapComponent extends Component {
+  constructor(props) {
+    super(props);
+    this.props = {
+      mapDiv: document.getElementById(mapID);
+    }
+  }
+
   componentDidMount() {
     const directionsDisplay;
     const directionsService;
     let infoWindow;
     let map;
     const mapID = "mapDiv" + this.props.nMap;
-    const mapDiv = document.getElementById(mapID);
     const mapOptions = {
       center: {
         lat: -34.397,
         lng: 150.644
       },
       zoom: 8
-    }
-
-    // will not render without setting these css parameters
-    const style = {
-      height: "50%",
-      width: "50%",
-      position: "absolute"
-      margin: "5% 0% 5% 10%"
     }
 
     map = new google.maps.Map(document.getElementById(mapID), mapOptions);
@@ -35,6 +33,7 @@ class GoogleMapComponent extends Component {
     const request = {
        origin: this.props.origin,
        destination: this.props.destination,
+       date: date,
        travelMode: travelMode,
        transitOptions: {
         arrivalTime: this.props.arrivalTime,
@@ -75,6 +74,14 @@ class GoogleMapComponent extends Component {
   }
 
   render() {
+    const { mapDiv } = this.props;
+    const style = {
+      height: "50%",
+      width: "50%",
+      position: "absolute"
+      margin: "5% 0% 5% 10%"
+    }
+
     return (
       <div>
         <div style={style} id={`mapDiv${this.props.nMap}`}>Google Maps</div>
