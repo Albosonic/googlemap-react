@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MapService from './mapService';
+import MapService from './MapService';
 
 class GoogleMapComponent extends Component {
   constructor(props) {
@@ -30,7 +30,6 @@ class GoogleMapComponent extends Component {
 
   handleRoute(e) {    
     e.preventDefault();
-    // async behavior w/state, causing map to update only on second click
     var start = e.target.childNodes[0].value || this.state.origin;
     var end = e.target.childNodes[1].value || this.state.destination;
 
@@ -44,9 +43,7 @@ class GoogleMapComponent extends Component {
          departureTime: new Date()
         }
       }      
-    })
-
-    this.props.routeService(this.state.newMap, this.state.request);
+    },()=>this.props.routeService(this.state.newMap, this.state.request));
   }
 
   render() {
