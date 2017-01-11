@@ -30,7 +30,10 @@ class GoogleMapComponent extends Component {
 
   handleRoute(e) {    
     e.preventDefault();
-    // async behavior causing map to update only on second click
+    // async behavior w/state, causing map to update only on second click
+    var start = e.target.childNodes[0].value || this.state.origin;
+    var end = e.target.childNodes[1].value || this.state.destination;
+
     this.setState({
       request: {
         origin: e.target.childNodes[0].value,
@@ -42,6 +45,7 @@ class GoogleMapComponent extends Component {
         }
       }      
     })
+
     this.props.routeService(this.state.newMap, this.state.request);
   }
 
