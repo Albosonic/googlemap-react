@@ -1,6 +1,8 @@
 # googlemap-react
 
 >  Google Map React Component.
+this package is currently under construction
+- [see on github](https://github.com/Albosonic/googlemap-reacthttps://www.npmjs.org/package/body#readme)
 
 To install enter this into your command line:
 ```shell
