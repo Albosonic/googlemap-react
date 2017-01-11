@@ -2,7 +2,7 @@
 
 >  Google Map React Component.
 
-- [see on github](https://github.com/Albosonic/googlemap-reacthttps://www.npmjs.org/package/body#readme)
+- [see on github](https://github.com/Albosonic/googlemap-react)
 
 To install enter this into your command line:
 ```shell
@@ -21,6 +21,9 @@ To get acces to the Google Maps API you must create your API KEY, you can do thi
 ![Alt text](/assets/npm-map-image.jpg?raw=true "Screen Shot") 
 
 >Built in form and submit button for origin and destination routing.
+
+>ClassNames: "container-map" "map" "map-form" "map-input" "map-directions-button"
+are provided for styling they are nested in that order.
 
 ### Example
  ```js
