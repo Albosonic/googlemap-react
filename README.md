@@ -2,6 +2,8 @@
 
 >  Google Map React Component.
 
+- [see on github](https://github.com/Albosonic/googlemap-react)
+
 To install enter this into your command line:
 ```shell
 npm install --save googlemap-react
@@ -13,50 +15,38 @@ import GoogleMap from 'googlemap-react';
 To get acces to the Google Maps API you must create your API KEY, you can do this at https://developers.google.com/maps/documentation/javascript/get-api-key, once you have received you key insert into the script tag below and add to you html file:
 ```html
 <!-- dont forget to add this in your html -->
-<script src="https://maps.googleapis.com/maps/api/js?key=YOURE_API_KEY"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
 ```
 
-parameters/props that get passed into the `<GoogleMap />` component attributes are inherited by the request object and used in the request to the google maps API these are mock entries below. they should give you a hint about the input types expected by the API
+![Alt text](/assets/npm-map-image.jpg?raw=true "Screen Shot") 
 
-### Example
-```js
-var request = {
-   origin: this.props.origin,
-   destination: this.props.destination,
-   travelMode: travelMode,
-   transitOptions: {
-    arrivalTime: this.props.arrivalTime,
-    departureTime: this.props.departureTime
-  }
-}
-```
+>Built in form and submit button for origin and destination routing.
+
+>ClassNames: "container-map" "map" "map-form" "map-input" "map-directions-button"
+are provided for styling they are nested in that order.
+
 ### Example
  ```js
-import React from 'react';
-import ReactDOM from 'react-dom';
-import GoogleMap from 'googlemap-react';
+ import React from 'react';
+ import ReactDOM from 'react-dom';
+ import GoogleMapComponent from './GoogleMapComponent';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);   
-    console.log(GoogleMap);
-  }
+ class App extends React.Component {
+   constructor(props) {
+    super(props); 
+   }
 
-  render() {
-    return (
-      <div>        
-        <GoogleMap
-          arrivalTime={new Date()}
-          departureTime={new Date()}
-          destination={'chicago'}
-          nMap={1}
-          origin={'california'}
-          modes={[] || null}
-          travelMode={'TRANSIT'} />        
-      </div>
-    );
-  }
-}
+   render() {
+     return (
+       <div>  
+         <div>  
+          <!-- nMap gets concatinated to a string to provide a unique id to the DOM every for every map instance -->
+           <GoogleMapComponent nMap={ 1 } />        
+         </div>
+       </div>
+     );
+   }
+ }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ ReactDOM.render(<App />, document.getElementById('app'));
 ```
