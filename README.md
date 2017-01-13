@@ -29,7 +29,7 @@ are provided for styling they are nested in that order. Also for directions styl
  ```js
  import React from 'react';
  import ReactDOM from 'react-dom';
- import GoogleMapComponent from './GoogleMapComponent';
+ import GoogleMap from 'googlemap-react';
 
  class App extends React.Component {
    constructor(props) {
@@ -41,7 +41,7 @@ are provided for styling they are nested in that order. Also for directions styl
        <div>  
          <div>  
           <!-- nMap gets concatinated to a string to provide a unique id to the DOM every for every map instance -->
-           <GoogleMapComponent nMap={ 1 } />        
+           <GoogleMap nMap={ 1 } />        
          </div>
        </div>
      );
