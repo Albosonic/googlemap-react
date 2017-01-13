@@ -20,10 +20,10 @@ To get acces to the Google Maps API you must create your API KEY, you can do thi
 
 ![Alt text](/assets/npm-map-screen-shot.jpg?raw=true "Screen Shot") 
 
->Built in form and submit button for origin and destination routing.
+>Built in form and submit button for origin and destination routing with step by step directions.
 
 >ClassNames: "container-map" "map" "map-form" "map-input" "map-directions-button"
-are provided for styling they are nested in that order.
+are provided for styling they are nested in that order. Also for directions styling we have: "container-directions" and "directions-item" 
 
 ### Example
  ```js
