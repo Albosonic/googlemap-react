@@ -1,39 +1,35 @@
 import React, { Component } from 'react';
-import MapService from './mapService';
+import MapService from './MapService';
+import Directions from './Directions';
 
 class GoogleMapComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      neWmap: {},
+      steps: {},
       request: {
         origin: '539 Mandana Blvd, Oakland CA 94610',
         destination: '710 las Lomas Dr, La Habra CA 90631',
         travelMode: 'DRIVING',
         transitOptions: {
-         arrivalTime: new Date(),
-         departureTime: new Date()
+          arrivalTime: new Date(),
+          departureTime: new Date()
         }
       }
     }
+    this.map;
   }
-  componentDidMount() {    
-    let infoWindow;
-    let map;
-    let mapID = "mapDiv" + this.props.nMap;
-    
-    map = new google.maps.Map(document.getElementById(mapID), this.props.mapOptions);
-    infoWindow = new google.maps.InfoWindow({map: map});    
-    this.props.routeService(map, this.state.request);
-    this.setState({newMap: map});
+
+  componentDidMount() {        
+    let mapID = "mapDiv" + this.props.nMap;                
+    this.map = new google.maps.Map(document.getElementById(mapID));
+    let infoWindow = new google.maps.InfoWindow({map: this.map});    
+    this.props.routeService(this.map, this.state.request)
+    .then((directions)=> this.setState({steps: directions}));        
   }
 
   handleRoute(e) {    
-    e.preventDefault();
-    // async behavior w/state, causing map to update only on second click
-    var start = e.target.childNodes[0].value || this.state.origin;
-    var end = e.target.childNodes[1].value || this.state.destination;
-
+    e.preventDefault();             
     this.setState({
       request: {
         origin: e.target.childNodes[0].value,
@@ -44,25 +40,28 @@ class GoogleMapComponent extends Component {
          departureTime: new Date()
         }
       }      
-    },()=>this.props.routeService(this.state.newMap, this.state.request));
+    },()=>this.props.routeService(this.map, this.state.request)
+      .then((directions)=>this.setState({steps: directions})));
   }
 
   render() {
     const style = { height: "50%", width: "50%", position: "absolute", margin: "5% 0% 5% 10%" };
-
     return (
-      <div className="container-map">
-        <div className="map" style={style} id={`mapDiv${this.props.nMap}`}>Google Maps</div>
-        <form className="map-form" onSubmit={(e)=>{this.handleRoute(e)}}>
-          <input className="map-input" type="text" placeholder="origin"/>
-          <input className="map-input" type="text" placeholder="destination"/>
-          <button 
-            type="submit"
-            className="map-directions-button">
-            directions
-            </button>
-        </form>
-      </div>
+      <div>
+        <div className="container-map">
+          <div className="map" style={style} id={`mapDiv${this.props.nMap}`}>Google Maps</div>
+          <form className="map-form" onSubmit={(e)=>{this.handleRoute(e)}}>
+            <input className="map-input" type="text" placeholder="origin"/>
+            <input className="map-input" type="text" placeholder="destination"/>
+            <button 
+              className="map-directions-button"
+              type="submit">
+              directions
+              </button>
+          </form>        
+        </div>
+          <Directions steps={this.state.steps} />    
+      </div>                                                  
     );
   }
 }
