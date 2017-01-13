@@ -18,7 +18,7 @@ To get acces to the Google Maps API you must create your API KEY, you can do thi
 <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
 ```
 
-![Alt text](/assets/npm-map-image.jpg?raw=true "Screen Shot") 
+![Alt text](/assets/npm-map-screen-shot.jpg?raw=true "Screen Shot") 
 
 >Built in form and submit button for origin and destination routing.
 
