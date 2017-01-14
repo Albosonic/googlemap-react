@@ -8,8 +8,8 @@ class GoogleMapComponent extends Component {
     this.state = {
       steps: {},
       request: {
-        origin: '539 Mandana Blvd, Oakland CA 94610',
-        destination: '710 las Lomas Dr, La Habra CA 90631',
+        origin: '1 Frank H Ogawa Plaza, Oakland, CA 94612',
+        destination: '1600 Pennsylvania Ave NW, Washington, DC 20500',
         travelMode: 'DRIVING',
         transitOptions: {
           arrivalTime: new Date(),
@@ -46,6 +46,7 @@ class GoogleMapComponent extends Component {
 
   render() {
     const style = { height: "50%", width: "50%", position: "absolute", margin: "5% 0% 5% 10%" };
+
     return (
       <div>
         <div className="container-map">
