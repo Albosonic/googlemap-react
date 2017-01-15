@@ -7,10 +7,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "['react'",
-    "'google",
-    "maps']"
+    "react",
+    "google",
+    "maps"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Albosonic/googlemap-react.git"
+  },
   "author": "Alberto Madueno",
   "license": "ISC",
   "dependencies": {
