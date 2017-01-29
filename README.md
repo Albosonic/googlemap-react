@@ -21,9 +21,10 @@ To get access to the Google Maps API you must first create your API KEY, you can
 ![Alt text](/assets/shot-google-map.jpg?raw=true "Screen Shot") 
 
 >Built-in form and submit button for origin and destination routing with step by step directions.
+>Clean yet basic styling.
 
->ClassNames: "container-map" "map" "map-form" "map-input" "map-directions-button"
-are provided for styling they are nested in that order. Also for directions styling, we have: "container-directions" and "directions-item" 
+>ClassNames: "container-package" "map-form" "map-input" "map-directions-button"
+are provided for styling. Check out the source code for acomplete reference. Or simply amend the styles.css file in the source code. 
 
 ### Example
  ```js
