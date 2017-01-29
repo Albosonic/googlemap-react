@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MapService from './MapService';
 import Directions from './Directions';
+import Form from './Form';
 
 class GoogleMapComponent extends Component {
   constructor(props) {
@@ -20,7 +21,8 @@ class GoogleMapComponent extends Component {
     this.map;
   }
 
-  componentDidMount() {        
+  componentDidMount() { 
+    this.props.appendStyle();       
     let mapID = "mapDiv" + this.props.nMap;                
     this.map = new google.maps.Map(document.getElementById(mapID));
     let infoWindow = new google.maps.InfoWindow({map: this.map});    
@@ -45,24 +47,17 @@ class GoogleMapComponent extends Component {
   }
 
   render() {
-    const style = { height: "50%", width: "50%", position: "absolute", margin: "5% 0% 5% 10%" };
-
-    return (
-      <div>
+    const style = { height: "50%", width: "50%", position: "absolute" };
+    return (      
+      <div className="container-package">
         <div className="container-map">
-          <div className="map" style={style} id={`mapDiv${this.props.nMap}`}>Google Maps</div>
-          <form className="map-form" onSubmit={(e)=>{this.handleRoute(e)}}>
-            <input className="map-input" type="text" placeholder="origin"/>
-            <input className="map-input" type="text" placeholder="destination"/>
-            <button 
-              className="map-directions-button"
-              type="submit">
-              directions
-              </button>
-          </form>        
+          <div className="map" style={style} id={`mapDiv${this.props.nMap}`}>Google Maps</div>          
         </div>
-          <Directions steps={this.state.steps} />    
-      </div>                                                  
+        <div className="container-info">
+          <Form className="form" handleRoute={ this.handleRoute.bind(this) } />
+          <Directions steps={this.state.steps} />              
+        </div>
+      </div>                                                                                                  
     );
   }
 }

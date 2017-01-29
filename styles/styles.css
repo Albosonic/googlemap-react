@@ -1,0 +1,60 @@
+html, body {
+ height: 100%;
+ margin: 0;
+ padding: 0;
+}
+
+.container-form-directions {
+  display: flex column;
+  font-family: Tahoma, Geneva, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  border: 2px solid black;
+  margin-left: 35%; 
+  margin-top: 2%; 
+  overflow: scroll;
+  width: 30%;      
+  height:100px;         
+}
+
+.container-form {
+  display: flex;
+  justify-content: center;  
+  margin-top: 550px;
+  height: 100%;
+  width: 15%;
+  margin-left: 42.5%; 
+}
+
+.container-map {
+  /*border: 3px solid red;*/
+  display: flex;
+  justify-content: center;
+  /*position: absolute;*/
+}
+
+.container-package {
+  display: flex column;
+  justify-content: center;
+}
+
+.map {
+  border: 2px solid black;      
+}
+
+.map-input {
+  border-bottom: 2px solid black;
+  border-right: 0px;
+  border-left: 0px;
+  border-top: 0px;
+  font-size: 20px;
+  margin: 18px;  
+}
+
+.map-directions-button {
+  border: 2px solid black;
+  background-color: white;
+  border-radius:2px;
+  font-size: 18px;
+  margin-left: 31%;
+}
