@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDom from 'react-dom';
 
 export var MapService = ComposedComponent => class extends React.Component {
 
@@ -12,7 +11,6 @@ export var MapService = ComposedComponent => class extends React.Component {
 
   routeService(map, request) {  
     this.directionsDisplay.setMap(map); 
-
     return new Promise((resolve, reject)=>{
       this.directionsService.route(request, (result, status) => {
         if (status === 'OK') {        
@@ -25,8 +23,22 @@ export var MapService = ComposedComponent => class extends React.Component {
     })    
   }
 
+  appendStyle() {
+    var head  = document.getElementsByTagName('head')[0];
+    var link = document.createElement('link');
+    link.rel  = 'stylesheet';
+    link.type = 'text/css';
+    link.href = "../styles/styles.css";
+    link.media = 'all';
+    head.appendChild(link);
+  }
+
   render() {
-    return <ComposedComponent routeService={this.routeService.bind(this)} />
+    return(
+     <ComposedComponent 
+      routeService={ this.routeService.bind(this) } 
+      appendStyle={ this.appendStyle.bind(this) } />
+      )
   }
 };
 
